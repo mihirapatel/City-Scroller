@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>Surprise Me</title>
+</head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+<style>
+body {
+  background-color: mistyrose;
+}
+
+</style>
+
+
+<body>
+<!-- navigation bar -->
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="finalprojecthome.html">Fremont</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="food.html">Food</a></li>
+        <li><a href="shopping.html">Shopping</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li ><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="cafe.html">Cafe/Dessert Places</a></li>
+        <li><a href="commevents.html">Community Events</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li class="active"><a href="surprise.html">Surprise Me</a></li>
+      </ul>
+      </div>
+    </nav>
+
+<center>
+<h2>Surprise Me</h2>
+<p style="font-size: 17px">Not satisfied? Refresh the page for another option!</p>
+</center>
+
+<br>
+
+<!-- javascript to choose random from list -->
+
+<center>
+<script style="font-size:70px">
+
+
+  var messages = [
+  'Sala Thai', 
+  'The Habit', 
+  'Bombay Pizza House',
+  'La Pinata',
+  'Le Papillon',
+  'Pacific Commons',
+  'Newpark Mall',
+  'Fremont Hub',
+  'Union Landing Shopping Center',
+  'AMC Newpark',
+  'Century Theatres at Pacific Commons',
+  'Cine Grand',
+  'Century Theatres at Union Landing',
+  'Broadway West Theatre',
+  'Mission Peak',
+  'Coyote Hills',
+  'Don Edwards National Wildlife Refuge',
+  'Lake Elizabeth',
+  'Devout Cofee',
+  'Sno-Crave Teahouse',
+  'Mission Coffee',
+  'Niles Ice Cream Sweets and Eats',
+  'CREAM',
+  'Movie Nights',
+  'Summer Concert Series',
+  'Shark\'s Ice Skating Rink',
+  'iFly',
+  'City Beach',
+  'Rockin\' Jump',
+  'Laser Tag',
+  'The Cloverleaf Family Bowl',
+  ]
+
+var message = messages[Math.floor(Math.random() * messages.length)];
+
+document.write(message.fontsize(6)); 
+
+</script>
+</center>
+
+<br>
+<br>
+
+
+<!-- code for slideshow -->
+<center><div class="w3-content w3-section" style="max-width:500px">
+<!-- Devout -->
+  <center><img class="mySlides" src="http://www.girlsonfood.net/wp-content/uploads/2016/05/vsco-photo-1-1.jpg"  width= 500px, height="400px" ></center>
+<!-- Don Edwards -->
+  <center><img class="mySlides" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Don_Edwards_San_Francisco_Bay_National_Wildlife_Refuge_3.JPG" width= 500px, height="400px"></center>
+<!-- Pacific Commons -->
+  <center><img class="mySlides" src="http://sgpa.com/wp-content/uploads/2014/10/Pacific-Commons-1.jpg" width= 500px, height="400px"></center>
+<!-- Shinn Garden -->
+  <center><img class="mySlides" src="http://1.bp.blogspot.com/_jMZtxLO8Bwo/S9c4fbi6D6I/AAAAAAAAAEM/HGq9tfeFpcQ/s1600/Japga1.JPG" width= 500px, height="400px"></center>
+<!-- Coyote Hills -->
+  <center><img class="mySlides" src="http://1.bp.blogspot.com/-RzNqCm_YzcE/TmqCf9edFxI/AAAAAAAAGmM/hwEygwgyPDQ/s1600/AlamedaCreek.LongShot.MtnPeak.Creek.9.8.11.600.jpg" width= 500px, height="400px"></center>
+<!-- Mission Peak -->
+  <center><img class="mySlides" src="https://c2.staticflickr.com/8/7425/15853703434_8a43b27d66_b.jpg" width= 500px, height="400px"></center>
+<!-- Snocrave -->
+  <center><img class="mySlides" src="http://acts2fellowship.org/pomona/wp-content/uploads/2014/08/IMG_9971.jpg" width= 500px, height="400px"></center>
+
+
+
+</div></center>
+
+<center><script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+   // Change image every 2.5 seconds
+    setTimeout(carousel, 2500); 
+}
+</script></center>
+
+</body>
+</html>

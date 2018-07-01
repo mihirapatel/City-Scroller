@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="OutdoorActivities.css">
+
+<title>Activities In Fremont</title>
+
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+
+
+<body>
+ <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="finalprojecthome.html">Fremont</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="food.html">Food</a></li>
+        <li><a href="shopping.html">Shopping</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="cafe.html">Cafe/Dessert Places</a></li>
+        <li><a href="commevents.html">Community Events</a></li>
+        <li class="active"><a href="activity.html">Activities</a></li>
+        <li><a href="surprise.html">Surprise Me</a></li>
+      </ul>
+      </div>
+    </nav>
+
+<center><h1 style="font-family: Roboto-Thin; font-size: 60px">Activities</h1></center>
+
+ <style>
+      #map {
+        width: 80%;
+        height: 400px;
+        background-color: grey;
+      }
+
+      h2 {
+        font-family: Roboto;
+        font-size: 50px;
+        text-align: center;
+        color: #006699;
+      }
+
+
+      h1 {
+        font-size: 50px;
+      }
+
+      h3 {
+        font-size: 20px;
+        color: Black;
+      }
+
+      table {
+        margin-left: 112px;
+      }
+
+      body {
+        margin-bottom:50px;
+        background-color: mistyrose;
+      }
+
+      .money {
+        color: Green;
+      }
+      
+      .borderClass {
+        border: 1px solid #85e0e0;
+      }
+
+
+    </style>
+
+  </head>
+
+
+    <center><div id="map"></div></center>
+
+    <script>
+        function initMap() {
+
+          //variables for all the marker labels
+          var iceSkatingLabel = "1";
+          var iFlyLabel = "2";
+          var cityBeachLabel = "3";
+          var rockinJumpLabel = "4";
+          var lazerTagLabel = "5";
+          var cloverleafLabel = "6";
+
+          // all of the coordinates for all of the places in SF stored as variables
+          var iceSkatingLL = new google.maps.LatLng(37.577155, -121.980747);
+          var iFlyLL = new google.maps.LatLng(37.499953, -121.973595);
+          var cityBeachLL = new google.maps.LatLng(37.510591, -121.950931);
+          var rockinJumpLL = new google.maps.LatLng(37.530405, -121.998608);
+          var lazerTagLL = new google.maps.LatLng(37.519944, -121.990999);
+          var cloverleafLL = new google.maps.LatLng(37.548270, -121.988572);
+
+          var mapOptions = {
+            zoom: 11,
+            center: cloverleafLL
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+//Shark's Ice 
+          var iceSkatingString = "<h3>Shark's Ice Skating Rink</h3>" + "<div>This is Shark's Ice Skating Rink.</div>"
+          var iceSkatingInfoWindow = new google.maps.InfoWindow({
+              content: iceSkatingString
+          });
+          var iceSkatingMarker = new google.maps.Marker({
+              position: iceSkatingLL,
+              label: iceSkatingLabel,
+              map: map,
+              title: "Shark's Ice Skating Rink"
+          });
+          iceSkatingMarker.addListener('click', function() {
+              iceSkatingInfoWindow.open(map, iceSkatingMarker);
+          });
+
+//iFly
+          var iFlyString = "<h3>iFly</h3>" + "<div>This is iFly.</div>"
+          var iFlyInfoWindow = new google.maps.InfoWindow({
+              content: iFlyString
+          });
+          var iFlyMarker = new google.maps.Marker({
+              position: iFlyLL,
+              label: iFlyLabel,
+              map: map,
+              title: 'iFly'
+          });
+          iFlyMarker.addListener('click', function() {
+              iFlyInfoWindow.open(map, iFlyMarker);
+          });
+
+//City Beach
+          var cityBeachString = "<h3>City Beach</h3>" + "<div>This is City Beach.</div>"
+          var cityBeachInfoWindow = new google.maps.InfoWindow({
+              content: cityBeachString
+          });
+          var cityBeachMarker = new google.maps.Marker({
+              position: cityBeachLL,
+              label: cityBeachLabel,
+              map: map,
+              title: 'City Beach'
+          });
+          cityBeachMarker.addListener('click', function() {
+              cityBeachInfoWindow.open(map, cityBeachMarker);
+          });
+
+//Rockin Jump
+          var rockinJumpString = "<h3>Rockin' Jump</h3>" + "<div>This is Rockin' Jump.</div>"
+          var rockinJumpInfoWindow = new google.maps.InfoWindow({
+              content: rockinJumpString
+          });
+          var rockinJumpMarker = new google.maps.Marker({
+              position: rockinJumpLL,
+              label: rockinJumpLabel,
+              map: map,
+              title: "Rockin' Jump"
+          });
+          rockinJumpMarker.addListener('click', function() {
+              rockinJumpInfoWindow.open(map, rockinJumpMarker);
+          });
+
+//Lazer Tag
+          var lazerTagString = "<h3>Laser Tag</h3>" + "<div>This is Laser Tag.</div>"
+          var lazerTagInfoWindow = new google.maps.InfoWindow({
+              content: lazerTagString
+          });
+          var lazerTagMarker = new google.maps.Marker({
+              position: lazerTagLL,
+              label: lazerTagLabel,
+              map: map,
+              title: 'Lazer Tag'
+          });
+          lazerTagMarker.addListener('click', function() {
+              lazerTagInfoWindow.open(map, lazerTagMarker);
+          });
+
+//Cloverleaf
+          var cloverleafString = "<h3>Cloverleaf Family Bowl</h3>" + "<div>This is Cloverleaf Family Bowl.</div>"
+          var cloverleafInfoWindow = new google.maps.InfoWindow({
+              content: cloverleafString
+          });
+          var cloverleafMarker = new google.maps.Marker({
+              position: cloverleafLL,
+              label: cloverleafLabel,
+              map: map,
+              title: 'Cloverleaf'
+          });
+          cloverleafMarker.addListener('click', function() {
+              cloverleafInfoWindow.open(map, cloverleafMarker);
+          });
+
+          
+
+//calling all of the marker functions
+          iceSkatingMarker.setMap(mapDiv);
+          iFlyMarker.setMap(mapDiv);
+          cityBeachMarker.setMap(mapDiv);
+          rockinJumpMarker.setMap(mapDiv);
+          lazerTagMarker.setMap(mapDiv);
+          cloverleafMarker.setMap(mapDiv);
+        }
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+<!-- Shark's Ice Skating Rink -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.wheredoitakethekids.com/wp-content/uploads/2015/03/sharksIce-01.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.wheredoitakethekids.com/wp-content/uploads/2015/03/sharksIce-01.jpg" width="300" height="200"/></a>
+
+<b><a href="http://www.sharksiceatfremont.com">1. Shark's Ice Skating Rink</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 44388 Old Warm Springs Blvd, Fremont, CA 94538 <br>
+Shark's Ice Skating Rink is the official location for the local hockey team, San Jose Sharks, to practice. It is an excellent place to come with friends and skate, and is open from 6 AM to 11 PM.
+</div>
+
+<!-- iFly -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.smartdestinations.com/img/pt/dest/Lax/att/Lax_Att_iFly_Indoor_Skydiving/gallery/iFly-Indoor-Skydiving-1.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.smartdestinations.com/img/pt/dest/Lax/att/Lax_Att_iFly_Indoor_Skydiving/gallery/iFly-Indoor-Skydiving-1.jpg" width="300" height="200"/></a>
+
+<b><a href="https://www.iflyworld.com/sfbay/">2. iFly</a></b><br/>
+
+<b><div class = "money">$$$$</div></b>
+
+Address: 31310 Alvarado-Niles Rd, Union City, CA 94587<br>
+iFly is located in the Union Landing Shopping Center. It is open from 9 AM to 11 PM and is a great place to get a good workout and have fun.</div>
+
+<!-- City Beach -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.groupon.com/images/site_images/0113/1014/City-Beach-Rock-Club.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.groupon.com/images/site_images/0113/1014/City-Beach-Rock-Club.jpg" width="300" height="200"/></a>
+
+<b><a href="http://www.yelp.com/biz/city-beach-bar-and-restaurant-fremont">3. City Beach</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 4020 Technology Pl, Fremont, CA 94538<br>
+City Beach is open from 11 AM to 10 PM. It is a recreational center with indoor rock climbing, an American eatery, and more!</div>
+
+<!-- Rockin Jump -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="https://img.grouponcdn.com/deal/aqxFLWgdqXHjDoMYFzV5/qP-5753x3452/v1/c700x420.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="https://img.grouponcdn.com/deal/aqxFLWgdqXHjDoMYFzV5/qP-5753x3452/v1/c700x420.jpg" width="300" height="200"/></a>
+
+<b><a href="http://fremont.rockinjump.com">4. Rockin' Jump</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 39177 Farwell Dr, Fremont, CA 94538<br>
+Rockin' Jump, located in the Mowry East Shopping Center, is a perfect place of fun to come with friends. Filled with trampolines, it is great to jump around and have a great time!</div>
+
+<!-- Laser Tag -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://216.92.103.209/images/laser-tag-arena-WB.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://216.92.103.209/images/laser-tag-arena-WB.jpg" width="300" height="200"/></a>
+
+<b><a href="http://lasertagginginc.com">5. Laser Tag</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 5759 Stevenson Blvd, Newark, CA 94560<br>
+Laser Tag Inc. is open from 12 PM to 9PM is a great place to come with a group of friends and play laser tag.</div>
+
+<!-- Cloverleaf Bowling -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.bowlingsbookstore.com/wp-content/uploads/2015/11/bowling_2911347b.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.bowlingsbookstore.com/wp-content/uploads/2015/11/bowling_2911347b.jpg" width="300" height="200"/></a>
+
+<b> <a href="http://www.cloverleafbowl.com">6. The Cloverleaf Family Bowl</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 40645 Fremont Blvd, Fremont, CA 94538<br>
+The Cloverleaf Family Bowl is open from 8:30 AM to 2 AM. It is great for some late night fun, with it being open almost all day and all night.</div>
+
+ 
+
+</body>
+</html>
+
+
+
+
+

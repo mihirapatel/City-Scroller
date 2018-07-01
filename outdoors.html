@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="OutdoorActivities.css">
+
+<title>Outdoor Activities In Fremont</title>
+</head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+<!-- navigation bar -->
+
+<body>
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="finalprojecthome.html">Fremont</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="food.html">Food</a></li>
+        <li><a href="shopping.html">Shopping</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li class="active"><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="cafe.html">Cafe/Dessert Places</a></li>
+        <li><a href="commevents.html">Community Events</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="surprise.html">Surprise Me</a></li>
+      </ul>
+      </div>
+    </nav>
+
+<center><h1 style="font-family: Roboto-Thin; font-size: 60px">Outdoor Activities</h1></center>
+
+ <style>
+      #map {
+        width: 80%;
+        height: 400px;
+        background-color: grey;
+      }
+
+      h1 {
+        font-family: Roboto;
+        font-size: 40px;
+      }
+
+      .money{
+        color: green;
+      }
+    
+      body {
+        background-color: mistyrose;
+        margin-bottom: 50px;
+      }
+
+      .borderClass {
+        border: 1px solid #85e0e0;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <center><div id="map"></div></center>
+
+    <script>
+        function initMap() {
+
+         var missionPeakLabel = "1";
+          var coyoteHillsLabel = "2";
+          var donEdwardsLabel = "3";
+          var lakeElizabethLabel = "4"
+
+           // all of the coordinates for all of the places in SF stored as variables
+          var missionPeakLL = new google.maps.LatLng(37.510739, -121.894433);
+          var coyoteHillsLL = new google.maps.LatLng(37.542159, -122.085796);
+          var donEdwardsLL = new google.maps.LatLng(37.532145,-122.071551);
+          var lakeElizabethLL = new google.maps.LatLng(37.549020,-121.962953);
+
+          var mapOptions = {
+            zoom: 11,
+            center: lakeElizabethLL
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+//Mission Peak
+          var missionPeakString = "<h3>Mission Peak</h3>" + "<div>This is Mission Peak.</div>"
+          var missionPeakInfoWindow = new google.maps.InfoWindow({
+              content: missionPeakString
+          });
+          var missionPeakMarker = new google.maps.Marker({
+              position: missionPeakLL,
+    label: missionPeakLabel,
+              map: map,
+              title: 'Mission Peak'
+          });
+          missionPeakMarker.addListener('click', function() {
+              missionPeakInfoWindow.open(map, missionPeakMarker);
+          });
+
+//Coyote Hills
+          var coyoteHillsString = "<h3>Coyote Hills</h3>" + "<div>This is Coyote Hills.</div>"
+          var coyoteHillsInfoWindow = new google.maps.InfoWindow({
+              content: coyoteHillsString
+          });
+          var coyoteHillsMarker = new google.maps.Marker({
+              position: coyoteHillsLL,
+    label: coyoteHillsLabel,
+              map: map,
+              title: 'Coyote Hills'
+          });
+          coyoteHillsMarker.addListener('click', function() {
+              coyoteHillsInfoWindow.open(map, coyoteHillsMarker);
+          });
+
+//Don Edwards
+          var donEdwardsString = "<h3>Don Edwards</h3>" + "<div>This is Don Edwards.</div>"
+          var donEdwardsInfoWindow = new google.maps.InfoWindow({
+              content: donEdwardsString
+          });
+          var donEdwardsMarker = new google.maps.Marker({
+              position: donEdwardsLL,
+    label: donEdwardsLabel,
+              map: map,
+              title: 'Don Edwards'
+          });
+          donEdwardsMarker.addListener('click', function() {
+              donEdwardsInfoWindow.open(map, donEdwardsMarker);
+          });
+
+//Lake Elizabth
+          var lakeElizabethString = "<h3>Lake Elizabeth</h3>" + "<div>This is Lake Elizabeth.</div>"
+          var lakeElizabethInfoWindow = new google.maps.InfoWindow({
+              content: lakeElizabethString
+          });
+          var lakeElizabethMarker = new google.maps.Marker({
+              position: lakeElizabethLL,
+    label: lakeElizabethLabel,
+              map: map,
+              title: 'Lake Elizabeth'
+          });
+          lakeElizabethMarker.addListener('click', function() {
+              lakeElizabethInfoWindow.open(map, lakeElizabethMarker);
+          });
+
+          
+
+//calling all of the marker functions
+          missionPeakMarker.setMap(mapDiv);
+          coyoteHillsMarker.setMap(mapDiv);
+          donEdwardsMarker.setMap(mapDiv);
+          lakeElizabethMarker.setMap(mapDiv);
+
+        }
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+
+<!-- Mission Peak -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="https://c2.staticflickr.com/8/7425/15853703434_8a43b27d66_b.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="https://c2.staticflickr.com/8/7425/15853703434_8a43b27d66_b.jpg" width="300" height="200"/></a>
+
+<b><a href="http://www.ebparks.org/parks/mission">1. Mission Peak</a></b><br/>
+
+<b><div class="money">Free</div></b>
+
+Address: Mission Peak, California 94539<br>
+Mission Peak is a scenic hike that has two trails that are fun to climb both at sunset and sunrise. It is a great place to get exercise but also go on adventures with friends.
+</div>
+
+<!-- Coyote Hills -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://s3-media3.fl.yelpcdn.com/bphoto/i7y5fhQORpb-KkFsLXdMdw/348s.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://s3-media3.fl.yelpcdn.com/bphoto/i7y5fhQORpb-KkFsLXdMdw/348s.jpg" width="300" height="200"/></a>
+
+<b><a href="http://www.ebparks.org/parks/coyote_hills">2. Coyote Hills</a></b><br/>
+
+<b><div class="money">Free</div></b>
+
+Address: 8000 Patterson Ranch Rd, Fremont, CA 94555<br>
+Coyote Hills is a regional park with both bike trails and hiking trails, having a great view of part of the bay at the top. In addition, there are often community events in relation to native american tribes that aim to conserve their culture.
+</div>
+
+<!-- Don Edwards -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="https://www.fws.gov/uploadedImages/Region_8/NWRS/Zone_2/San_Francisco_Bay_Complex/Don_Edwards_San_Francisco_Bay/Images/Visit/foot_bridge_pedestrian_AmbarishGoswami_512.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="https://www.fws.gov/uploadedImages/Region_8/NWRS/Zone_2/San_Francisco_Bay_Complex/Don_Edwards_San_Francisco_Bay/Images/Visit/foot_bridge_pedestrian_AmbarishGoswami_512.jpg" width="300" height="200"/></a>
+
+<b><a href="https://www.fws.gov/refuge/don_edwards_san_francisco_bay/">3. Don Edwards National Wildlife Refuge</a></b><br/>
+
+<b><div class="money">Free</div></b>
+
+Address: 2 Marshlands Rd, Fremont, CA 94555
+<br>
+Don Edwards National Wildlife Refuge is a national park that has a great view of the Bay. It is a great place to walk alone or with friends.
+</div>
+
+<!-- Lake Elizabeth -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Elizabeth_Lake-kmf.JPG/250px-Elizabeth_Lake-kmf.JPG" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Elizabeth_Lake-kmf.JPG/250px-Elizabeth_Lake-kmf.JPG" width="300" height="200"/></a>
+
+<b><a href="https://www.fremont.gov/317/Central-Park">4. Lake Elizabeth</a></b><br/>
+
+<b><div class="money">Free</div></b>
+
+Address: 40000 Paseo Padre Pkwy, Fremont, CA 94538
+<br>
+Lake Elizabeth, or Central Park, is a park located in the middle of Fremont. It has parks, boating, and bike trails, perfect for a summer day.
+</div>
+
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>Cafes & Dessert Shops In Fremont</title>
+
+<style>
+    #map {
+      width: 80%;
+        height: 400px;
+        background-color: grey;
+      }
+
+      table {
+        margin-left: 112px;
+      }
+
+      body {
+        margin-bottom: 50px;
+        background-color: mistyrose;
+      }
+    
+      .money {
+        color: Green;
+      }
+
+      .borderClass {
+        border: 1px solid #85e0e0;
+      }
+
+</style>
+
+
+</head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+<body>
+
+
+<!-- navigation bar -->
+<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="finalprojecthome.html">Fremont</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="food.html">Food</a></li>
+        <li><a href="shopping.html">Shopping</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="outdoors.html">Outdoors</a></li>
+        <li class="active"><a href="cafe.html">Cafe/Dessert Places</a></li>
+        <li><a href="commevents.html">Community Events</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="surprise.html">Surprise Me</a></li>
+      </ul>
+      </div>
+    </nav>
+
+<center><h1 style="font-family: Roboto-Thin; font-size: 60px">Cafes & Dessert</h1></center>
+
+<center><div id="map"></div></center>
+
+    <script>
+        function initMap() {
+
+          //variables for all the marker labels
+          var devoutLabel = "1";
+          var snowCraveLabel = "2";
+          var missionCoffeeLabel = "3";
+          var nilesIceCreamLabel = "4";
+          var creamLabel = "5";
+
+          // all of the coordinates for all of the cafe/dessert places stored as variables
+
+          var devoutLL = new google.maps.LatLng(37.577155, -121.980747);
+          var snowcraveLL = new google.maps.LatLng(37.499953, -121.973595);
+          var missionCoffeeLL = new google.maps.LatLng(37.533545, -121.920906);
+          var nilesIceCreamLL = new google.maps.LatLng(37.576462, -121.97682);
+          var creamLL = new google.maps.LatLng(37.501149, -121.96911);
+          var centerMap = new google.maps.LatLng(37.542801, -121.960529);
+
+          var mapOptions = {
+            zoom: 12,
+            center: centerMap
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+//Devout Coffee
+          var devoutString = "<h3>Devout Coffee</h3>" + "<div>This is Devout Coffee.</div>"
+          var devoutInfoWindow = new google.maps.InfoWindow({
+              content: devoutString
+          });
+          var devoutMarker = new google.maps.Marker({
+              position: devoutLL,
+    label: devoutLabel,
+              map: map,
+              title: 'Devout Coffee'
+          });
+          devoutMarker.addListener('click', function() {
+              devoutInfoWindow.open(map, devoutMarker);
+          });
+
+//Snowcrave
+          var snowcraveString = "<h3>Sno-Crave</h3>" + "<div>This is Sno-Crave.</div>"
+          var snowcraveInfoWindow = new google.maps.InfoWindow({
+              content: snowcraveString
+          });
+          var snowcraveMarker = new google.maps.Marker({
+              position: snowcraveLL,
+    label: snowCraveLabel,
+              map: map,
+              title: 'Sno-Crave'
+          });
+          snowcraveMarker.addListener('click', function() {
+              snowcraveInfoWindow.open(map, snowcraveMarker);
+          });
+
+//Mission Coffee House
+          var missionCoffeeString = "<h3>Mission Coffee</h3>" + "<div>This is Mission Coffee.</div>"
+          var missionCoffeeInfoWindow = new google.maps.InfoWindow({
+              content: missionCoffeeString
+          });
+          var missionCoffeeMarker = new google.maps.Marker({
+              position: missionCoffeeLL,
+    label: missionCoffeeLabel,
+              map: map,
+              title: 'Mission Coffee'
+          });
+          missionCoffeeMarker.addListener('click', function() {
+              missionCoffeeInfoWindow.open(map, missionCoffeeMarker);
+          });
+
+//Niles Ice Cream
+          var nilesIceCreamString = "<h3>Niles Ice Cream</h3>" + "<div>This is Niles Ice Cream.</div>"
+          var nilesIceCreamInfoWindow = new google.maps.InfoWindow({
+              content: nilesIceCreamString
+          });
+          var nilesIceCreamMarker = new google.maps.Marker({
+              position: nilesIceCreamLL,
+     label: nilesIceCreamLabel,
+              map: map,
+              title: 'Niles Ice Cream'
+          });
+          nilesIceCreamMarker.addListener('click', function() {
+              nilesIceCreamInfoWindow.open(map, nilesIceCreamMarker);
+          });
+
+//Cream
+          var creamString = "<h3>CREAM</h3>" + "<div>This is the CREAM.</div>"
+          var creamInfoWindow = new google.maps.InfoWindow({
+              content: creamString
+          });
+          var creamMarker = new google.maps.Marker({
+              position: creamLL,
+    label: creamLabel,
+              map: map,
+              title: 'CREAM'
+          });
+          creamMarker.addListener('click', function() {
+              creamInfoWindow.open(map, creamMarker);
+          });
+          
+//calling all of the marker functions
+          devoutMarker.setMap(mapDiv);
+          snowcraveMarker.setMap(mapDiv);
+          missionCoffeeMarker.setMap(mapDiv);
+          nilesIceCreamMarker.setMap(mapDiv);
+          creamMarker.setMap(mapDiv);
+        }
+        
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+
+<!-- Devout -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://66.media.tumblr.com/9dbb151044ce5b40a580c1ede1514982/tumblr_naenvh4uNj1s4ghwoo1_500.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://66.media.tumblr.com/9dbb151044ce5b40a580c1ede1514982/tumblr_naenvh4uNj1s4ghwoo1_500.jpg" width="300" height="200" /></a>
+
+<b><a href="http://devoutcoffee.com">1. Devout Coffee</a></b><br/>
+
+<b><div class="money">$</div></b>
+
+Address: 37323 Niles Blvd, Fremont, CA 94536
+<br>
+Devout Cofee is located in the Niles district. It is an aesthetic cafe that is perfect to hang out with friends.
+</div>
+
+<!-- Snowcrave -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://s3-media4.fl.yelpcdn.com/bphoto/NBlbl_0KiZQxahfnHGVcoQ/348s.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://s3-media4.fl.yelpcdn.com/bphoto/NBlbl_0KiZQxahfnHGVcoQ/348s.jpg" width="300" height="200" /></a>
+
+<b><a href="http://snocrave.com">2. Sno-Crave Teahouse</a></b><br/>
+
+<b><div class="money">$$</div></b>
+
+Address: 43773 Boscell Rd, Fremont, CA 94538
+<br>
+Sno-Crave is an icecream shop located next to the movie theater in Pacific Commons. It is open from 12 PM to 12 AM, which is perfect for a late night hangout.
+</div>
+
+<!-- Mission Coffee -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="https://s3-media4.fl.yelpcdn.com/bphoto/9KzaOnTaqQ6Cs1bTZW_xiA/o.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="https://s3-media4.fl.yelpcdn.com/bphoto/9KzaOnTaqQ6Cs1bTZW_xiA/o.jpg" width="300" height="200" /></a>
+
+<b><a href="http://fremontcoffee.com">3. Mission Coffee</a></b><br/>
+
+<b><div class="money">$</div></b>
+
+Address: 151 Washington Blvd, Fremont, CA 94539
+<br>
+Mission Coffee is open from 6 AM to 9 PM. It serves coffee and expresso drinks, food, and is served in a charming cafe with a patio for outdoor eating.
+</div>
+
+<!-- Niles Ice Cream -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://s3-media2.fl.yelpcdn.com/bphoto/snQIYou0bmz3xlI3B683bA/o.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://s3-media2.fl.yelpcdn.com/bphoto/snQIYou0bmz3xlI3B683bA/o.jpg" width="300" height="200" /></a>
+
+<b><a href="http://www.yelp.com/biz/niles-ice-cream-sweets-and-eats-fremont-2">4. Niles Ice Cream Sweets and Eats</a></b><br/>
+
+<b><div class="money">$</div></b>
+
+Address: 37699 Niles Blvd, Fremont, CA 94536  
+<br>
+Niles Ice Cream Sweets and Eats is located in the Niles District and is open until 10 PM. Their ice cream is freshly churned and has a wide cariety of flavors, each coming at a good price.
+</div>
+
+<!-- Cream -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://blogs.mercurynews.com/eat-drink-play/files/2015/09/blog-creamsandwich.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://blogs.mercurynews.com/eat-drink-play/files/2015/09/blog-creamsandwich.jpg" width="300" height="200" /></a>
+
+<b><a href="http://creamnation.com">5. CREAM</a></b><br/>
+
+<b><div class="money">$</div></b>
+
+Address: 43982 Pacific Commons Blvd, Fremont, CA 94538  
+<br>
+CREAM, or Cookies Rule Everything Around Me, is an ice cream shop for ice cream sandwiches located in Pacific Commons. It is open from 12 PM to 11 PM and is perfect for a hangout with friends due to the large number of places surrounding it.
+</div>
+
+
+
+</body>
+</html>
+
+
+

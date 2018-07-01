@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>City Scroller</title>
+</head>
+
+<style>
+
+  h1{
+    position: relative;
+    top: 20px;
+    font-size: 100px;
+  }
+
+  p{
+    position: relative;
+    top: -10px;
+    font-size: 20px;
+  }
+
+  body {
+    font-family: Roboto;
+    color: White;
+  }
+
+/*code for dropdown*/
+  .btn-toolbar {
+    position: relative;
+    top: 60px;
+    left: 675px;
+
+  }
+
+  /*code for clidehow backgrond*/
+  .cb-slideshow,
+  .cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+  }
+  .cb-slideshow:after { 
+      content: '';
+      background: transparent url(../images/pattern.png) repeat top left; 
+  } 
+  .cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 24s linear infinite 0s; 
+  }
+
+  .cb-slideshow li:nth-child(1) span { 
+    background-image: url(http://www.evacation.org/wp-content/uploads/2014/12/The-Golden-Gate-Bridge-Image.jpg) 
+  }
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(https://media.timeout.com/images/100644443/image.jpg);
+    animation-delay: 6s; 
+  }
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(https://drscdn.500px.org/photo/15216103/q%3D80_m%3D1500/0c81dc79ef68d7fe12b2a10917f52a1c);
+    animation-delay: 12s; 
+  }
+.cb-slideshow li:nth-child(4) span { 
+    background-image: url(https://drscdn.500px.org/photo/27511259/q%3D80_m%3D1500/a6b9a940c781da7bc78f9fac2fe41578);
+    animation-delay: 18s; 
+  }
+
+.cb-slideshow li:nth-child(2) div { 
+    animation-delay: 6s; 
+  }
+.cb-slideshow li:nth-child(3) div { 
+    animation-delay: 12s; 
+  }
+.cb-slideshow li:nth-child(4) div { 
+    animation-delay: 18s; 
+  }
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    13% { opacity: 1; animation-timing-function: ease-out; }
+    22% { opacity: 1 }
+    30% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+.greeting {
+  position: relative;
+  z-index: 1000;
+  color: Black;
+}
+
+
+</style>
+
+<!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+<body>
+
+<ul class="cb-slideshow">
+  <li>
+    <span>Image 01</span>
+  </li>
+  <li>
+    <span>Image 02</span>
+  </li>
+    <li>
+    <span>Image 03</span>
+  </li>
+    <li>
+    <span>Image 04</span>
+  </li>
+</ul>
+
+<div class="greeting">
+  <center><b><h1 style="font-size:100px;">CITY SCROLLER</h1></b><center> 
+  <center><b><p>Choose a city from the table below to find things to do, places to go, and more. <br> All in one place. </p></b></center>
+</div>
+ 
+
+
+    <!-- this is a class that will contain the code for a dropdown -->
+
+<div class="btn-toolbar">
+    <div class="btn-group">
+      <a href="#" class="btn btn-info btn-large">Cities</a>
+      <a href= "#" class="btn btn-info btn-largr dropdown-toggle" data-toggle="dropdown"> <span class= "caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="finalprojecthome.html">Fremont</a></li>
+      </ul>
+    </div>
+</div>
+ 
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- code for slideshow -->
+<div class="w3-content w3-section" style="max-width:500px">
+<!-- Devout -->
+  <img class="mySlides" src="http://s3-media3.fl.yelpcdn.com/bphoto/PDLqA9pBPkGmUAFFLW2zIA/o.jpg" style="width:100%">
+<!-- Don Edwards -->
+  <img class="mySlides" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Don_Edwards_San_Francisco_Bay_National_Wildlife_Refuge_3.JPG" style="width:100%">
+<!-- Pacific Commons -->
+  <img class="mySlides" src="http://sgpa.com/wp-content/uploads/2014/10/Pacific-Commons-1.jpg" style="width:100%">
+<!-- Shinn Garden -->
+  <img class="mySlides" src="http://1.bp.blogspot.com/_jMZtxLO8Bwo/S9c4fbi6D6I/AAAAAAAAAEM/HGq9tfeFpcQ/s1600/Japga1.JPG" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+   // Change image every 3 seconds
+    setTimeout(carousel, 3000); 
+}
+</script> 

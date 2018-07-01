@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>City Scroller</title>
+
+<style type = "text/css">
+
+ul.img-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.img-list li {
+  display: inline-block;
+  height: 300px;
+  margin: 0 1em 1em 0;
+  position: relative;
+  width: 300px;
+}
+
+
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 300px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 300px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+  font-size: 25px;
+  font-family: Roboto;
+}
+
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul.img-list li:hover span.text-content {
+  opacity: 1;
+}
+
+body {
+  font-family: Roboto;
+  background-color: mistyrose;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 15px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+</style>  
+
+</head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="aboutus.css">
+  <script src="finalprojecthome.js"></script>
+<!-- this creates the navigation bar at the top of the page -->
+<body>
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="home.html">City Scroller</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="finalprojecthome.html">Home</a></li>
+        <li class="active"><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      </div>
+    </nav>
+
+<center><h1>About Us</h1></center>
+
+<br>
+<p> This website was made by Mihira Patel, Anjali Krishnan, and Alisha Laroia as their final project, at the 2016 Girls Who Code Summer Immersion Program at Workday, in Pleasanton, California.
+<br>
+
+<br>The Summer Immersion Program is a seven-week program offered at various host tech companies. 20 girls are selected to participate at each program, where they learn about the world of computer science through the Girls Who Code curriculum, in addition to various guest speakers, field trips to tech companies, and mentorship from female engineers at the host company. In the first five weeks, the girls learn multiple programming languages and complete labs to apply the skills they learn. They learn Python, Object Oriented Programming with Python, robotics using C++, HTML, CSS, and JavaScript. The last two weeks are dedicated to the girls creating their final projects.</p>
+
+<!-- row one of our profiles pictures -->
+<ul class="img-list">
+  <li>
+    <a href="#">
+      <img src="mihira.jpg" width="300" height="300" />
+      <span class="text-content"><span><b>Mihira Patel</b> <br>
+      <p> Junior, Washington High School </p>
+      </span></span>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <img src="anjali.jpg" width="300" height="300" />
+      <span class="text-content"><span><b>Anjali Krishnan</b> <br>
+      <p> Senior, Mission San Jose High School </p>
+      </span></span>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <img src="alisha.jpg" width="300" height="300" />
+      <span class="text-content"><span><b>Alisha Laroia</b> <br>
+      <p> Senior, American High School </p>
+      </span></span>
+    </a>
+  </li>
+
+</ul>
+
+
+</body>
+</html>

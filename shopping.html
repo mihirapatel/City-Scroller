@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>Shopping In Fremont</title>
+
+<style>
+    #map {
+      width: 80%;
+      height: 400px;
+      background-color: grey;
+      }
+
+    table {
+      margin-left: 112px;
+    }
+
+    body {
+      font-family: Roboto;
+      margin-bottom: 50px;
+      background-color:mistyrose;
+    }
+
+    .money {
+      color: Green;
+    }
+
+    .borderClass {
+       border: 1px solid #85e0e0;
+    }
+
+
+</style>
+
+
+</head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+<body>
+
+ <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="finalprojecthome.html">Fremont</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="food.html">Food</a></li>
+        <li class="active"><a href="shopping.html">Shopping</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="cafe.html">Cafe/Dessert Places</a></li>
+        <li><a href="commevents.html">Community Events</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="surprise.html">Surprise Me</a></li>
+      </ul>
+      </div>
+    </nav>
+
+<center><h1 style="font-family: Roboto-Thin; font-size: 60px">Shopping Centers</h1></center>
+
+<center><div id="map"></div></center>
+<script>
+        function initMap() {
+
+         var theBlockLabel = "1";
+          var newparkLabel = "2";
+          var theHubLabel = "3";
+          var unionLabel = "4"
+
+
+          var theBlockLL = new google.maps.LatLng(37.502074, -121.970198);
+          var newparkLL = new google.maps.LatLng(37.526196, -122.001301);
+          var theHubLL = new google.maps.LatLng(37.545291, -121.989291);
+          var unionLandingShoppingLL = new google.maps.LatLng(37.603153, -122.064241);
+
+          var mapOptions = {
+            zoom: 11,
+            center: theHubLL
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+//The Block
+          var theBlockString = "<h3>The Block</h3>" + "<div>This is the Block.</div>"
+          var theBlockInfoWindow = new google.maps.InfoWindow({
+              content: theBlockString
+          });
+          var theBlockMarker = new google.maps.Marker({
+              position: theBlockLL,
+    label: theBlockLabel,
+              map: map,
+              title: 'The Block'
+          });
+          theBlockMarker.addListener('click', function() {
+              theBlockInfoWindow.open(map, theBlockMarker);
+          });
+
+//Newpark
+          var newparkString = "<h3>Newpark Mall</h3>" + "<div>This is Newpark Mall.</div>"
+          var newparkInfoWindow = new google.maps.InfoWindow({
+              content: newparkString
+          });
+          var newparkMarker = new google.maps.Marker({
+              position: newparkLL,
+    label: newparkLabel,
+              map: map,
+              title: 'Newpark Mall'
+          });
+          newparkMarker.addListener('click', function() {
+              newparkInfoWindow.open(map, newparkMarker);
+          });
+
+//The Hub
+          var theHubString = "<h3>The Hub</h3>" + "<div>This is the Hub.</div>"
+          var theHubInfoWindow = new google.maps.InfoWindow({
+              content: theHubString
+          });
+          var theHubMarker = new google.maps.Marker({
+              position: theHubLL,
+    label: theHubLabel,
+              map: map,
+              title: 'The Hub'
+          });
+          theHubMarker.addListener('click', function() {
+              theHubInfoWindow.open(map, theHubMarker);
+          });
+
+//Union Landing Shopping Center
+          var unionLandingShoppingString = "<h3>Union Landing Shopping Center</h3>" + "<div>This is the Union Landing Shopping Center.</div>"
+          var unionLandingShoppingInfoWindow = new google.maps.InfoWindow({
+              content: unionLandingShoppingString
+          });
+          var unionLandingShoppingMarker = new google.maps.Marker({
+              position: unionLandingShoppingLL,
+    label: unionLabel,
+              map: map,
+              title: 'Union Landing Shopping Center'
+          });
+          unionLandingShoppingMarker.addListener('click', function() {
+              unionLandingShoppingInfoWindow.open(map, unionLandingShoppingMarker);
+          });
+
+          
+//calling all of the marker functions
+          theBlockMarker.setMap(mapDiv);
+          newparkMarker.setMap(mapDiv);
+          theHubMarker.setMap(mapDiv);
+          unionLandingShoppingMarker.setMap(mapDiv);
+        }
+        
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+<!-- Pacific Commons -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.sgpa.com/wp-content/uploads/2014/05/2-Pacific-Commons-Block.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.sgpa.com/wp-content/uploads/2014/05/2-Pacific-Commons-Block.jpg" width="300" height="200" /></a>
+
+<b><a href="http://pacificcommons.com">1. Pacific Commons</a></b><br/>
+
+<b><div class="money">$$</div></b>
+
+Address: 43918 Boscell Rd, Fremont, CA 94538
+<br>
+Pacific Commons is a shopping center filled with a variety of stores perfect for shopping, including Nordstrom Rack, Old Navy, and Toys R' Us. Also, there is a plethora of food and desserts including Cold Stone Creamery.
+</div>
+
+<!-- Newpark Mall -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://elsarch.com/wp/wp-content/uploads/2014/12/03-Newpark-Restaurant-Row-Entry.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://elsarch.com/wp/wp-content/uploads/2014/12/03-Newpark-Restaurant-Row-Entry.jpg" width="300" height="200" /></a>
+
+<b><a href="http://www.newparkmall.com">2. Newpark Mall</a></b><br>
+
+<b><div class="money">$$</div></b>
+
+Address: 2086 Newpark Mall, Newark, CA 94560
+<br>
+The Newpark Mall is the closest mall to Fremont, which has the AMC movie theater and a large selection of department and mall stores. It is the perfect place to hang out with friends and shop.
+</div>
+
+<!-- Fremont Hub -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://custom.shopkimco.com/sites/11945/files/photos/67/67_0750.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://custom.shopkimco.com/sites/11945/files/photos/67/67_0750.jpg" width="300" height="200" /></a>
+
+<b><a href="http://www.thefremonthub.com">3. Fremont Hub</a></b><br>
+
+<b><div class="money">$$</div></b>
+
+Address: 39100 Argonaut Way, Fremont, CA 94538
+<br>
+The Fremont Hub is the downtown of Fremont, having stores such as Ulta Beauty, Target, Trader Joes, and Nothing Budnt Cakes! It is a great place to walk around, eat, and shop.
+</div>
+
+<!-- Union Landing Shopping Center -->
+
+<div class= "borderClass"; style="background-color: #eff5f5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.fcgainc.com/wp-content/uploads/2006/12/Albsavon-c-600x400.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.fcgainc.com/wp-content/uploads/2006/12/Albsavon-c-600x400.jpg" width="300" height="200" /></a>
+
+<b><a href="http://www.yelp.com/biz/union-landing-union-city">4. Union Landing Shopping Center</a></b><br>
+
+<b><div class="money">$$</div></b>
+
+Address: I-880, Union City, CA 94587
+<br>
+Union Landing is located in Union City, close to North Fremont, and contains a movie theater, iFly, Krispy Kreme, and a large variety of restaurants.
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

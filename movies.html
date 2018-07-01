@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>Movie Theaters In Fremont</title>
+
+<style>
+    #map {
+      width: 80%;
+        height: 420px;
+        background-color: grey;
+      }
+
+      table {
+        margin-left: 112px;
+      }
+
+      body {
+        font-family: Roboto;
+        background-color: mistyrose;
+        margin-bottom:50px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .money {
+        color: Green;
+      }
+
+      .borderClass {
+        border: 1px solid #85e0e0;
+      }
+
+</style>
+
+
+</head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+<body>
+
+<!-- code for navigation bar -->
+<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="finalprojecthome.html">Fremont</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="food.html">Food</a></li>
+        <li><a href="shopping.html">Shopping</a></li>
+        <li class="active"><a href="movies.html">Movies</a></li>
+        <li><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="cafe.html">Cafe/Dessert Places</a></li>
+        <li><a href="commevents.html">Community Events</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="surprise.html">Surprise Me</a></li>
+      </ul>
+      </div>
+    </nav>
+
+<center><h1 style="font-family: Roboto-Thin; font-size: 60px">Movie Theaters</h1></center>
+
+<center><div id="map"></div></center>
+
+    <script>
+        function initMap() {
+
+          //variables for all the marker labels
+          var amcNewparkLabel = "1";
+          var pacComLabel = "2";
+          var cineGrandLabel = "3";
+          var unionLandingLabel = "4";
+          var broadwayWestLabel = "5";
+
+          // all of the coordinates for all of the cafe/dessert places stored as variables
+          var amcNewparkLL = new google.maps.LatLng(37.527301, -122.001247);
+          var pacComLL = new google.maps.LatLng(37.501106, -121.970912);
+          var cineGrandLL = new google.maps.LatLng(37.554058, -121.979611);
+          var unionLandingLL = new google.maps.LatLng(37.599282, -122.067619);
+          var broadwayWestLL = new google.maps.LatLng(37.532736, -121.959336);
+         
+
+          var mapOptions = {
+            zoom: 12,
+            center: cineGrandLL
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+//AMC Newpark Theater
+          var amcNewparkString = "<h3>AMC Newpark Theater</h3>" + "<div>This is the AMC Newpark Theater..</div>"
+          var amcNewparkInfoWindow = new google.maps.InfoWindow({
+              content: amcNewparkString
+          });
+          var amcNewparkMarker = new google.maps.Marker({
+              position: amcNewparkLL,
+              label: amcNewparkLabel,
+              map: map,
+              title: 'AMC Newpark Theater'
+          });
+          amcNewparkMarker.addListener('click', function() {
+              amcNewparkInfoWindow.open(map, amcNewparkMarker);
+          });
+
+//Century Theaters at Pacific Commons
+          var pacComString = "<h3>Century Theaters at Pacific Commons</h3>" + "<div>This is Century Theaters in Pacific Commons.</div>"
+          var pacComInfoWindow = new google.maps.InfoWindow({
+              content: pacComString
+          });
+          var pacComMarker = new google.maps.Marker({
+              position: pacComLL,
+              label: pacComLabel,
+              map: map,
+              title: 'Century Theaters at Pacific Commons'
+          });
+          pacComMarker.addListener('click', function() {
+              pacComInfoWindow.open(map, pacComMarker);
+          });
+
+//Cine Grand
+          var cineGrandString = "<h3>Cine Grand</h3>" + "<div>This is Cine Grand.</div>"
+          var cineGrandInfoWindow = new google.maps.InfoWindow({
+              content: cineGrandString
+          });
+          var cineGrandMarker = new google.maps.Marker({
+              position: cineGrandLL,
+              label: cineGrandLabel,
+              map: map,
+              title: 'Cine Grand'
+          });
+          cineGrandMarker.addListener('click', function() {
+              cineGrandInfoWindow.open(map, cineGrandMarker);
+          });
+
+//Century Theaters at Union Landing
+          var unionLandingString = "<h3>Century Theaters at Union Landing</h3>" + "<div>This is Century Theaters at Union Landing.</div>"
+          var unionLandingInfoWindow = new google.maps.InfoWindow({
+              content: unionLandingString
+          });
+          var unionLandingMarker = new google.maps.Marker({
+              position: unionLandingLL,
+              label: unionLandingLabel,
+              map: map,
+              title: 'Century Theaters at Union Landing'
+          });
+          unionLandingMarker.addListener('click', function() {
+              unionLandingInfoWindow.open(map, unionLandingMarker);
+          });
+
+//Broadway West Theaters 
+          var broadwayWestString = "<h3>Broadway West Theaters</h3>" + "<div>This is Broadway West Theaters.</div>"
+          var broadwayWestInfoWindow = new google.maps.InfoWindow({
+              content: broadwayWestString
+          });
+          var broadwayWestMarker = new google.maps.Marker({
+              position: broadwayWestLL,
+              label: broadwayWestLabel,
+              map: map,
+              title: 'Broadway West Theaters'
+          });
+          broadwayWestMarker.addListener('click', function() {
+              broadwayWestInfoWindow.open(map, broadwayWestMarker);
+          });
+          
+//calling all of the marker functions
+          amcNewparkMarker.setMap(mapDiv);
+          pacComMarker.setMap(mapDiv);
+          cineGrandMarker.setMap(mapDiv);
+          unionLandingMarker.setMap(mapDiv);
+          broadwayWestMarker.setMap(mapDiv);
+        }
+        
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+<!--  AMC Newpark -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 120px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://popcultureblog.dallasnews.com/files/2012/08/NME_04FIREWHLAMC_3795239-11.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://popcultureblog.dallasnews.com/files/2012/08/NME_04FIREWHLAMC_3795239-11.jpg" width="300" height="200"/></a>
+
+<b><a href="https://www.amctheatres.com/movie-theatres/san-francisco/amc-newpark-12">1. AMC Newpark</a></b><br/>
+
+<b><div class = "money">$$$</div></b>
+
+Address: 400 Newpark Mall, Newark, CA 94560
+<br>
+The AMC Newpark theatre is located in the NewPark Mall. It contains reserved seating, so you can buy and pick your seats online and do not have to come early to the movies because your seat will be reserved for you. The seats are adjustable and provide a comfortable environment for a range of movies.
+</div>
+
+<!-- Pacific Commons -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.cinemark.com/media/948593/441.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.cinemark.com/media/948593/441.jpg" width="300" height="200"/></a>
+
+<b><a href="http://www.cinemark.com/theatre-detail.aspx?node_id=60543&">2. Century Theatres at Pacific Commons</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 43917 Pacific Commons Blvd, Fremont, CA 94538
+<br>
+Century Theatres is located in the Pacific Commons shopping center. Unlike AMC, you do not have to reserve seats so it is perfect for spontaneous plans. However, if you are gong to a very popular movie it is important to come early to pick out good seats!
+</div>
+
+<!-- Cine Grand -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="https://lh6.googleusercontent.com/-5Nx5JJQwM3M/AAAAAAAAAAI/AAAAAAAAACs/Jx1CMIyk0AE/photo.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="https://lh6.googleusercontent.com/-5Nx5JJQwM3M/AAAAAAAAAAI/AAAAAAAAACs/Jx1CMIyk0AE/photo.jpg" width="300" height="200"/></a><b>
+
+<a href="http://fremont.cinegrand.us">3. Cine Grand</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 39160 Paseo Padre Pkwy, Fremont, CA 94538
+<br>
+Cine Grand Fremont 7 is located in Gateway Plaza and is an Indian movie theatre that plays foreign films with subtitles. With its adjustable seats, it’s perfect to comfortably watch Bollywood movies.
+</div>
+
+<!-- Union Landing -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.cinemark.com/media/948590/440.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.cinemark.com/media/948590/440.jpg" width="300" height="200"/></a>
+
+<b><a href="http://www.cinemark.com/theatre-detail.aspx?node_id=1642&">4. Century Theatres at Union Landing</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 32100 Union Landing Blvd, Union City, CA 94587
+<br>
+Century Theatres in the Union Landing Shopping center. You do not have to reserve seating which is perfect for unplanned hangouts at the movies.
+</div>
+
+<!-- Broadway West -->
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.broadwaywest.org/wp-content/uploads/2016/01/2015-01-11-And-Then-There-Were-None-Show-Photos-040.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://www.broadwaywest.org/wp-content/uploads/2016/01/2015-01-11-And-Then-There-Were-None-Show-Photos-040.jpg" width="300" height="200"/></a>
+
+<b><a href="http://www.broadwaywest.org">5. Broadway West Theatre</a></b><br/>
+
+<b><div class = "money">$$</div></b>
+
+Address: 4000 Bay St, Fremont, CA 94538
+<br>
+Broadway West Theatre is an old-school performing arts venue featuring local community theater productions.
+</div>
+
+</body>
+</html>
+
+

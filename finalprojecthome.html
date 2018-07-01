@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <title>Things To Do In Fremont</title>
+
+<style type = "text/css">
+
+ul.img-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.img-list li {
+  display: inline-block;
+  height: 250px;
+  margin: 0 1em 1em 0;
+  position: relative;
+  width: 250px;
+}
+
+
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 250px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 250px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+  font-size: 50px;
+  font-family: Roboto;
+}
+
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul.img-list li:hover span.text-content {
+  opacity: 1;
+}
+
+body {
+  font-family: Roboto;
+  background-color: mistyrose;
+}
+
+
+
+</style>  
+
+</head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+<!-- this is the code for the navigation bar -->
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="home.html">City Scroller</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="finalprojecthome.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      </div>
+    </nav>
+
+    <center><h2 style="font-family: Roboto-Thin; font-size: 60px">Fremont</h2></center>
+
+  <!-- row one of images -->
+<ul class="img-list">
+  <li>
+    <a href="food.html">
+      <img src="food.png" width="250" height="250" />
+      <span class="text-content"><span><b>Food</b></span></span>
+    </a>
+  </li>
+
+  <li>
+    <a href="shopping.html">
+      <img src="shopping.png" width="250" height="250" />
+      <span class="text-content"><span><b>Shopping</b></span></span>
+    </a>
+  </li>
+
+  <li>
+    <a href="movies.html">
+      <img src="movies.png" width="250" height="250" />
+      <span class="text-content"><span><b>Movies</b></span></span>
+    </a>
+  </li>
+
+    <li>
+    <a href="outdoors.html">
+      <img src="outdoors.png" width="250" height="250" />
+      <span class="text-content"><span><b>Outdoor Activities</b></span></span>
+    </a>
+  </li>
+</ul>
+
+<!-- row two of images -->
+<ul class="img-list">
+  <li>
+    <a href="cafe.html">
+      <img src="cafe.jpg" width="250" height="250" />
+      <span class="text-content"><span><b>Cafes & Dessert</b></span></span>
+    </a>
+  </li>
+
+  <li>
+    <a href="commevents.html">
+      <img src="commevents.jpg" width="250" height="250" />
+      <span class="text-content" style="font-size: 47px" ><span><b>Community Events</b></span></span>
+    </a>
+  </li>
+
+  <li>
+    <a href="activity.html">
+      <img src="activity.jpg" width="250" height="250" />
+      <span class="text-content"><span><b>Activity</b></span></span>
+    </a>
+  </li>
+
+    <li>
+    <a href="surprise.html">
+      <img src="surprise.png" width="250" height="250" />
+      <span class="text-content"><span><b>Surprise Me</b></span></span>
+    </a>
+  </li>
+</ul>  
+
+  </body>
+
+</html>

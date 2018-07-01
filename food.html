@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <!-- this is the setup code for bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+  <title>Food In Fremont</title>
+
+     <style>
+      #map {
+        width: 80%;
+        height: 400px;
+        background-color: grey;
+      }
+
+      body {
+        margin-bottom: 50px;
+        background-color: mistyrose;
+        font-family: Roboto-Thin; !important;
+      }
+
+      .money {
+        color: green;
+      }
+
+      .borderClass {
+        border: 1px solid #85e0e0;
+      }
+
+      </style>
+
+  </head>
+
+  <!-- this links the CSS and JS files to the HTML -->
+  <link rel = "stylesheet" href="finalprojecthome.css">
+  <script src="finalprojecthome.js"></script>
+
+  <body>
+
+<!-- navgiation bar -->
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="finalprojecthome.html">Fremont</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="food.html">Food</a></li>
+        <li><a href="shopping.html">Shopping</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="cafe.html">Cafe/Dessert Places</a></li>
+        <li><a href="commevents.html">Community Events</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="surprise.html">Surprise Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <center><h1 style="font-family: Roboto-Thin; font-size: 60px">Food</h1></center>
+   <center><div id="map"></div></center>
+
+        <script>
+        function initMap() {
+
+          //variables for all the marker labels
+          var salaThaiLabel = "1";
+          var theHabitLabel = "2";
+          var bombayPizzaLabel = "3";
+          var laPinataLabel = "4";
+          var papillionLabel = "5";
+
+           // all of the coordinates for all of the places in SF stored as variables
+          var salathaiLL = new google.maps.LatLng(37.5031469,-121.94761690000001);
+          var thehabitLL = new google.maps.LatLng(37.5017733, -121.96999419999997);
+          var bombaypizzahouseLL = new google.maps.LatLng(37.56720809999999,-122.05254259999998);
+          var lapinataLL = new google.maps.LatLng(37.5544595,-121.98046629999999);
+          var papillonLL = new google.maps.LatLng(37.5792217,-121.97969119999999);
+
+          var mapOptions = {
+            zoom: 11,
+            center: lapinataLL
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+//Sala Thai
+          var salathaiString = "<h3>Sala Thai</h3>" + "<div>This is Sala Thai, a Thai restaurant.</div>"
+          var salathaiInfoWindow = new google.maps.InfoWindow({
+              content: salathaiString
+          });
+          var salathaiMarker = new google.maps.Marker({
+              position: salathaiLL,
+              label: salaThaiLabel,
+              map: map,
+              title: 'Sala Thai'
+          });
+          salathaiMarker.addListener('click', function() {
+              salathaiInfoWindow.open(map, salathaiMarker);
+          });
+
+//The Habit
+          var thehabitString = "<h3>The Habit </h3>" + "<div>This is the Habit, a burger chain in Pacific Commons.</div>"
+          var thehabitInfoWindow = new google.maps.InfoWindow({
+              content: thehabitString
+          });
+          var thehabitMarker = new google.maps.Marker({
+              position: thehabitLL,
+              label: theHabitLabel,
+              map: map,
+              title: 'The Habit'
+          });
+          thehabitMarker.addListener('click', function() {
+              thehabitInfoWindow.open(map, thehabitMarker);
+          });
+
+//Bombay Pizza
+          var bombaypizzahouseString = "<h3>Bombay Pizza House</h3>" + "<div>This is Bombay Pizza House, a mix between Indian food and pizza.</div>"
+          var bombaypizzahouseInfoWindow = new google.maps.InfoWindow({
+              content: bombaypizzahouseString
+          });
+          var bombaypizzahouseMarker = new google.maps.Marker({
+              position: bombaypizzahouseLL,
+              label: bombayPizzaLabel,
+              map: map,
+              title: 'Bombay Pizza House'
+          });
+          bombaypizzahouseMarker.addListener('click', function() {
+              bombaypizzahouseInfoWindow.open(map, bombaypizzahouseMarker);
+          });
+
+//La Pinata
+          var lapinataString = "<h3>La Pinata</h3>" + "<div>This is La Pinata, a Mexican restaurant.</div>"
+          var lapinataInfoWindow = new google.maps.InfoWindow({
+              content: lapinataString
+          });
+          var lapinataMarker = new google.maps.Marker({
+              position: lapinataLL,
+              label: laPinataLabel,
+              map: map,
+              title: 'La Pinata'
+          });
+          lapinataMarker.addListener('click', function() {
+              lapinataInfoWindow.open(map, lapinataMarker);
+          });
+
+//Papillion
+          var papillonString = "<h3>Papillon Restaurant</h3>" + "<div>This is Papillon, a French restaurant.</div>"
+          var papillonInfoWindow = new google.maps.InfoWindow({
+              content: papillonString
+          });
+          var papillonMarker = new google.maps.Marker({
+              position: papillonLL,
+              label: papillionLabel,
+              map: map,
+              title: 'Papillon Restaurant'
+          });
+          papillonMarker.addListener('click', function() {
+              papillonInfoWindow.open(map, papillonMarker);
+          });
+
+//calling all of the marker functions
+          salathaiMarker.setMap(mapDiv);
+          thehabitMarker.setMap(mapDiv);
+          bombaypizzahouseMarker.setMap(mapDiv);
+          lapinataMarker.setMap(mapDiv);
+          papillonMarker.setMap(mapDiv);
+        }
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+<!-- Sala Thai -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 120px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://thethaichili.net/site/wp-content/uploads/2013/05/pad-thai.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://thethaichili.net/site/wp-content/uploads/2013/05/pad-thai.jpg" width="300" height=”200”></a>
+
+<b><a href="http://www.salathai-restaurant.com">1. Sala Thai</a></b><br/>
+
+<b><div class="money">$$</div></b>
+
+Address: 39170 State St, Fremont, CA 94538
+<br>
+Sala Thai is a local Thai food restaurant that is open on Monday-Thursday from 11 AM to 9:30 PM, Friday and Saturday from 11 AM to 10 PM, and Sunday from 12 PM to 9 PM. It has both vegetarian and non-vegetarian options, and was voted the best Thai restaurant in 2005.
+</div>
+
+<!-- The Habit -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://www.greateats.com/Content/images/offers/Large/the-habit-burger-grill-large.png" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://www.greateats.com/Content/images/offers/Large/the-habit-burger-grill-large.png" width="300" height=”200”></a>
+
+<b><a href="https://www.habitburger.com">2. The Habit</a></b><br/>
+
+<b><div class="money">$</div></b>
+
+Address: 43830 Pacific Commons Blvd, Fremont, CA 94538
+<br>
+The Habit is open from 10:30 AM to 10 PM. It is a great burger chain with a range of options, including vegetarian and meat options.
+</div>
+
+<!-- Bombay Pizza House -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 130px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="https://media-cdn.tripadvisor.com/media/photo-s/07/79/ca/f6/indian-spicy-pizzas.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="https://media-cdn.tripadvisor.com/media/photo-s/07/79/ca/f6/indian-spicy-pizzas.jpg" width="300" height=”200”></a>
+
+<b><a href="http://www.bombaypizzahouse.com">3. Bombay Pizza House</a></b><br/>
+
+<b><div class="money">$$</div></b>
+
+Address: 4922 Paseo Padre Pkwy, Fremont, CA 94555
+<br>
+Bombay Pizza House is open from 11 AM to 10 PM. It is a fusion between Indian food and Italian food, having pizzas with Indian spices and Italian toppings.
+</div>
+</div>
+
+<!-- La Pinata -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 150px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://senorgrandes.com/usite/136/images/mexican-food.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://senorgrandes.com/usite/136/images/mexican-food.jpg" width="300" height=”200”></a>
+
+<b><a href="http://www.lapinata.com">4. La Pinata</a></b><br/>
+
+<b><div class="money">$$</div></b>
+
+Address: 39136 Paseo Padre Pkwy, Fremont, CA 94538
+<br>
+La Pinata is a Mexican food restaurant located in Gateway Plaza, open from 10 AM to 11 PM. It has scenic murals on the walls and a tequilla bar to create a destive atmosphere at this Mexican standby.
+</div>
+
+<!-- Le Papillon -->
+
+<div class= "borderClass"; style="background-color: #EFF5F5; margin-left: 142px; margin-right: 142px; margin-top: 50px; padding-bottom: 140px; padding-left: 30px; padding-right: 30px; padding-top: 30px;">
+
+<a href="http://cdn1.buuteeq.com/upload/15536/le-papillon-restaurant-manuel-antonio-costa-rica-21.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"  src="http://cdn1.buuteeq.com/upload/15536/le-papillon-restaurant-manuel-antonio-costa-rica-21.jpg" width="300" height=”200”></a>
+
+<b><a href="http://www.papillonrestaurant.com">5. Le Papillon</a></b><br/>
+
+<b><div class="money">$$$</div></b>
+
+Address: 37296 Mission Blvd, Fremont, CA 94536
+<br>
+Papillon is a French restaurant and is open from 11:30 AM to 2 PM. It serves traditional French cuisine and wine served in a fromal, white-tablecloth dining room and covered atrium.
+</div>
+
+
+
+</body> 
+</html>
+
